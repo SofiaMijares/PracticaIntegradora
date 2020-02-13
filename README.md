@@ -1,16 +1,18 @@
-# practica_integradora_uno
+# Práctica integradora 1
 
-A new Flutter project.
+El propósito de la práctica integradora es aplicar los temas vistos en clase, en el transcurso de las sesiones previas.
 
-## Getting Started
+# Temas a evaluar
 
-This project is a starting point for a Flutter application.
+- Componentes visuales: Scaffold, Columnas, Filas, Contenedores, Botones, Texto, etc
+- Diagrama: Diagrama de los componentes (básico)
+- Estados: Widgets Stateful, Widgets Stateless, Handler de estados
+- Navegación: Rutas, Paginas, Paso de parámetros
+- Alertas: Diálogos, Snackbars
+- Recursos: Assets, Fuentes, estilos, themes
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Set Up
+En terminal del VS Code ejecutar el siguiente comando para descargar las dependencias del proyecto antes de empezar a trabajar.
+```sh
+flutter packages get
+```
