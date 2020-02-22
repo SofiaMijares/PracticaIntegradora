@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:practica_integradora_uno/models/product_cart.dart';
-import 'package:practica_integradora_uno/models/product_drinks.dart';
+import 'package:practica_integradora_uno/models/product_grains.dart';
 
-class ItemDrinksDetails extends StatefulWidget {
-  final ProductDrinks drink;
-  ItemDrinksDetails({
+class ItemGrainsDetails extends StatefulWidget {
+  final ProductGrains grain;
+  ItemGrainsDetails({
     Key key,
-    @required this.drink,
+    @required this.grain,
   }) : super(key: key);
 
   @override
-  _ItemDrinksDetailsState createState() => _ItemDrinksDetailsState();
+  _ItemGrainsDetailsState createState() => _ItemGrainsDetailsState();
 }
 
-class _ItemDrinksDetailsState extends State<ItemDrinksDetails> {
+class _ItemGrainsDetailsState extends State<ItemGrainsDetails> {
   ProductCart cartProducts = ProductCart();
   var _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
@@ -43,7 +43,7 @@ class _ItemDrinksDetailsState extends State<ItemDrinksDetails> {
                   children: <Widget>[
                     Center(
                       child: Image.network(
-                        "${widget.drink.productImage}",
+                        "${widget.grain.productImage}",
                         height: 180,
                         width: 180,
                         fit: BoxFit.cover,
@@ -54,23 +54,23 @@ class _ItemDrinksDetailsState extends State<ItemDrinksDetails> {
                       right: 8,
                       child: Icon(
                         Icons.favorite,
-                        color: widget.drink.liked ? Colors.red : Colors.black,
+                        color: widget.grain.liked ? Colors.red : Colors.black,
                       ),
                     )
                   ],
                 ),
               ),
             ),
-            Text("${widget.drink.productTitle}", style: TextStyle(
+            Text("${widget.grain.productTitle}", style: TextStyle(
                     fontFamily: 'Akzidenz Grotesk Light',
                     fontSize: 20,
                     ),
                     ),
-            Text("${widget.drink.productDescription}", style: TextStyle(
+            Text("${widget.grain.productDescription}", style: TextStyle(
                     fontFamily: 'Akzidenz Grotesk Light',
                     fontSize: 18,
                     ),),
-            Text("${widget.drink.productPrice}", style: TextStyle(
+            Text("${widget.grain.productPrice}", style: TextStyle(
                     fontFamily: 'Akzidenz Grotesk Light',
                     fontSize: 25,
                     ),),
@@ -117,16 +117,16 @@ class _ItemDrinksDetailsState extends State<ItemDrinksDetails> {
                               content: Text("Product added..."),
                             ),
                           );
-                        if (cartProducts.drinks == null) {
-                          cartProducts.drinks = List<ProductDrinks>();
-                          widget.drink.productAmount += 1;
-                          cartProducts.drinks.add(widget.drink);
+                        if (cartProducts.grains == null) {
+                          cartProducts.grains = List<ProductGrains>();
+                          widget.grain.productAmount += 1;
+                          cartProducts.grains.add(widget.grain);
                         } else {
                           int i = 0;
-                          for (var item in cartProducts.drinks) {
+                          for (var item in cartProducts.grains) {
                             if (item.productTitle ==
-                                widget.drink.productTitle) {
-                              cartProducts.drinks[i].productAmount += 1;
+                                widget.grain.productTitle) {
+                              cartProducts.grains[i].productAmount += 1;
                             }
                             ++i;
                           }

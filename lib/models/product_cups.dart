@@ -1,22 +1,24 @@
+// TODO: Crear producto "ProductCup" siguiendo la logica de Drinks y Grains
+// TODO: Agregar al ProductRepository una lista de estos productos.
 import 'dart:math';
 import 'package:flutter/foundation.dart';
 
-enum ProductSize { CH, M, G }
+enum ProductColor { AZUL, BLANCO, ANARANJADO }
 
-class ProductDrinks {
+class ProductCups {
   String productTitle; // nombre del producto
   String productDescription; // descripcion del producto
   String productImage; // url de imagen del producto
-  ProductSize productSize; // tamano del producto
+  ProductColor productColor; // tamano del producto
   double productPrice; // precio del producto autocalculado
   int productAmount; // cantidad de producto por comprar
   bool liked;
 
-  ProductDrinks({
+  ProductCups({
     @required this.productTitle,
     @required this.productDescription,
     @required this.productImage,
-    @required this.productSize,
+    @required this.productColor,
     @required this.productAmount,
     this.liked = false,
   }) {
@@ -40,11 +42,11 @@ class ProductDrinks {
   //
   //
   double productPriceCalculator() {
-    if (this.productSize == ProductSize.CH)
+    if (this.productColor == ProductColor.ANARANJADO)
       return (20 + Random().nextInt(40)).toDouble();
-    if (this.productSize == ProductSize.M)
+    if (this.productColor == ProductColor.AZUL)
       return (40 + Random().nextInt(60)).toDouble();
-    if (this.productSize == ProductSize.G)
+    if (this.productColor == ProductColor.BLANCO)
       return (60 + Random().nextInt(80)).toDouble();
     return 999.0;
   }

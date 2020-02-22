@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practica_integradora_uno/home/welcomepage.dart';
 import 'package:practica_integradora_uno/utils/constants.dart';
 
 class Profile extends StatelessWidget {
@@ -8,6 +9,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(PROFILE_TITLE),
         actions: <Widget>[
           IconButton(
@@ -34,7 +36,7 @@ class Profile extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 16,
+                  height: 2,
                 ),
                 Text(
                   PROFILE_NAME,
@@ -44,11 +46,11 @@ class Profile extends StatelessWidget {
                       .copyWith(color: Colors.black),
                 ),
                 SizedBox(
-                  height: 8,
+                  height: 2,
                 ),
                 Text(PROFILE_EMAIL),
                 SizedBox(
-                  height: 16,
+                  height: 2,
                 ),
                 ListTile(
                   title: Text(PROFILE_CART),
@@ -57,18 +59,23 @@ class Profile extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text(PROFILE_WISHES),
-                  leading: Icon(Icons.thumb_up),
+                  leading: Icon(Icons.favorite),
                   onTap: () {},
                 ),
                 ListTile(
                   title: Text(PROFILE_HISTORY),
                   leading: Icon(Icons.store),
-                  onTap: () {},
+                  onTap: () {//Navigator.push(
+                       // context, MaterialPageRoute(builder: (context) => WelcomePage()));
+                       },
                 ),
                 ListTile(
                   title: Text(PROFILE_SETTINGS),
                   leading: Icon(Icons.settings),
-                  onTap: () {},
+                  onTap: () {
+                    //Navigator.push(
+                       // context, MaterialPageRoute(builder: (context) => WelcomePage()));
+                        },
                 ),
               ],
             ),
@@ -79,8 +86,10 @@ class Profile extends StatelessWidget {
                 children: <Widget>[
                   Expanded(
                     child: RaisedButton(
+                      color: Color(0xffbcb0a1),
                       child: Text(PROFILE_LOGOUT),
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => WelcomePage()));},
                     ),
                   ),
                 ],

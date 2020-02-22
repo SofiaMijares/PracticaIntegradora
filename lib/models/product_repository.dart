@@ -1,3 +1,4 @@
+import 'package:practica_integradora_uno/models/product_cups.dart';
 import 'package:practica_integradora_uno/models/product_drinks.dart';
 import 'package:practica_integradora_uno/models/product_grains.dart';
 
@@ -6,9 +7,50 @@ enum ProductType { BEBIDAS, GRANO, TAZAS }
 class ProductRepository {
   static List<dynamic> loadProducts(ProductType prodType) {
     // ----------------------       Tazas      ----------------------------//
-    //if (prodType == ProductType.TAZAS) {
-    // TODO: Agregar al menos 5 productos "cup/taza"
-    //}
+    if (prodType == ProductType.TAZAS) {
+    return <ProductCups>[
+        ProductCups(
+          productTitle: "Lavazza",
+          productDescription: "Endulzado con aromas florales.",
+          productImage:
+              "https://www.lavazza.it/content/dam/lavazza/products/caffe/macinato/moka/qualitaoro/new_render/tin_250_en/Tin-oro-en-250-thumb.png",
+          productColor: ProductColor.ANARANJADO,
+          productAmount: 0,
+        ),
+        ProductCups(
+          productTitle: "Lavazza",
+          productDescription: "Endulzado con aromas florales.",
+          productImage:
+              "https://www.lavazza.it/content/dam/lavazza/products/caffe/macinato/moka/qualitaoro/new_render/tin_250_en/Tin-oro-en-250-thumb.png",
+          productColor: ProductColor.ANARANJADO,
+          productAmount: 0,
+        ),
+        ProductCups(
+          productTitle: "Lavazza",
+          productDescription: "Endulzado con aromas florales.",
+          productImage:
+              "https://www.lavazza.it/content/dam/lavazza/products/caffe/macinato/moka/qualitaoro/new_render/tin_250_en/Tin-oro-en-250-thumb.png",
+          productColor: ProductColor.ANARANJADO,
+          productAmount: 0,
+        ),
+        ProductCups(
+          productTitle: "Lavazza",
+          productDescription: "Endulzado con aromas florales.",
+          productImage:
+              "https://www.lavazza.it/content/dam/lavazza/products/caffe/macinato/moka/qualitaoro/new_render/tin_250_en/Tin-oro-en-250-thumb.png",
+          productColor: ProductColor.ANARANJADO,
+          productAmount: 0,
+        ),
+        ProductCups(
+          productTitle: "Lavazza",
+          productDescription: "Endulzado con aromas florales.",
+          productImage:
+              "https://www.lavazza.it/content/dam/lavazza/products/caffe/macinato/moka/qualitaoro/new_render/tin_250_en/Tin-oro-en-250-thumb.png",
+          productColor: ProductColor.ANARANJADO,
+          productAmount: 0,
+        ),
+      ];
+    }
 
     // ----------------------       Grano      ----------------------------//
     if (prodType == ProductType.GRANO)
@@ -62,7 +104,7 @@ class ProductRepository {
       return <ProductDrinks>[
         ProductDrinks(
           productTitle: "Ristretto",
-          productDescription: "Expresso con una proporción menor de agua.",
+          productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat massa. Proin interdum dapibus congue. Etiam suscipit accumsan lorem.",
           productImage:
               "https://ineedcoffee.com/wp-content/uploads/2007/09/IMG_9259.jpg",
           productSize: ProductSize.M,
@@ -171,6 +213,8 @@ class ProductRepository {
           productAmount: 0,
         ),
       ];
+
+
     return List(); // otherwise empty list
   }
 }

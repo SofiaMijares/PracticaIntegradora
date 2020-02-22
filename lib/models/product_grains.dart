@@ -5,13 +5,13 @@ import 'package:flutter/foundation.dart';
 enum ProductWeight { CUARTO, KILO }
 
 class ProductGrains {
-  final String productTitle; // nombre del producto
-  final String productDescription; // descripcion del producto
-  final String productImage; // url de imagen del producto
+  String productTitle; // nombre del producto
+  String productDescription; // descripcion del producto
+  String productImage; // url de imagen del producto
   ProductWeight productWeight; // tamano del producto
   double productPrice; // precio del producto autocalculado
-  final int productAmount; // cantidad de producto por comprar
-  final bool liked;
+  int productAmount; // cantidad de producto por comprar
+  bool liked;
 
   ProductGrains({
     @required this.productTitle,

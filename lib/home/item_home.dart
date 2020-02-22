@@ -14,12 +14,13 @@ class ItemHome extends StatelessWidget {
     return Card(
       elevation: 4.0,
       margin: EdgeInsets.all(8.0),
-      color: Colors.grey[300],
+      color: Color(0xffbcb0a1),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Expanded(
             child: Container(
+        
               child: Text(
                 "$title",
                 style: Theme.of(context)

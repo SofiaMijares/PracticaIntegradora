@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:practica_integradora_uno/models/product_cart.dart';
-import 'package:practica_integradora_uno/models/product_drinks.dart';
+import 'package:practica_integradora_uno/models/product_cups.dart';
 
-class ItemDrinksDetails extends StatefulWidget {
-  final ProductDrinks drink;
-  ItemDrinksDetails({
+class ItemCupsDetails extends StatefulWidget {
+  final ProductCups cup;
+  ItemCupsDetails({
     Key key,
-    @required this.drink,
+    @required this.cup,
   }) : super(key: key);
 
   @override
-  _ItemDrinksDetailsState createState() => _ItemDrinksDetailsState();
+  _ItemCupsDetailsState createState() => _ItemCupsDetailsState();
 }
 
-class _ItemDrinksDetailsState extends State<ItemDrinksDetails> {
+class _ItemCupsDetailsState extends State<ItemCupsDetails> {
   ProductCart cartProducts = ProductCart();
   var _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
@@ -43,7 +43,7 @@ class _ItemDrinksDetailsState extends State<ItemDrinksDetails> {
                   children: <Widget>[
                     Center(
                       child: Image.network(
-                        "${widget.drink.productImage}",
+                        "${widget.cup.productImage}",
                         height: 180,
                         width: 180,
                         fit: BoxFit.cover,
@@ -54,23 +54,23 @@ class _ItemDrinksDetailsState extends State<ItemDrinksDetails> {
                       right: 8,
                       child: Icon(
                         Icons.favorite,
-                        color: widget.drink.liked ? Colors.red : Colors.black,
+                        color: widget.cup.liked ? Colors.red : Colors.black,
                       ),
                     )
                   ],
                 ),
               ),
             ),
-            Text("${widget.drink.productTitle}", style: TextStyle(
+            Text("${widget.cup.productTitle}", style: TextStyle(
                     fontFamily: 'Akzidenz Grotesk Light',
                     fontSize: 20,
                     ),
                     ),
-            Text("${widget.drink.productDescription}", style: TextStyle(
+            Text("${widget.cup.productDescription}", style: TextStyle(
                     fontFamily: 'Akzidenz Grotesk Light',
                     fontSize: 18,
                     ),),
-            Text("${widget.drink.productPrice}", style: TextStyle(
+            Text("${widget.cup.productPrice}", style: TextStyle(
                     fontFamily: 'Akzidenz Grotesk Light',
                     fontSize: 25,
                     ),),
@@ -117,20 +117,20 @@ class _ItemDrinksDetailsState extends State<ItemDrinksDetails> {
                               content: Text("Product added..."),
                             ),
                           );
-                        if (cartProducts.drinks == null) {
-                          cartProducts.drinks = List<ProductDrinks>();
-                          widget.drink.productAmount += 1;
-                          cartProducts.drinks.add(widget.drink);
+                        /*if (cartProducts.cups == null) {
+                          cartProducts.cups = List<ProductCups>();
+                          widget.cup.productAmount += 1;
+                          cartProducts.cups.add(widget.cup);
                         } else {
                           int i = 0;
-                          for (var item in cartProducts.drinks) {
+                          for (var item in cartProducts.cups) {
                             if (item.productTitle ==
-                                widget.drink.productTitle) {
-                              cartProducts.drinks[i].productAmount += 1;
+                                widget.cup.productTitle) {
+                              cartProducts.cups[i].productAmount += 1;
                             }
                             ++i;
                           }
-                        }
+                        }*/
                       },
                     ),
                   ),

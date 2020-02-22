@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:practica_integradora_uno/cart/cart.dart';
-import 'package:practica_integradora_uno/drinks/item_drinks.dart';
+import 'package:practica_integradora_uno/cups/item_cups.dart';
 import 'package:practica_integradora_uno/models/product_cart.dart';
-import 'package:practica_integradora_uno/models/product_drinks.dart';
+import 'package:practica_integradora_uno/models/product_cups.dart';
 import 'package:practica_integradora_uno/profile.dart';
 
-class DrinksPage extends StatelessWidget {
+class CupsPage extends StatelessWidget {
   final Map<String, List> products;
-  DrinksPage({
+  CupsPage({
     Key key,
     @required this.products,
   }) : super(key: key);
@@ -17,7 +17,7 @@ class DrinksPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Bebidas"),
+        title: Text("Tazas"),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.person),
@@ -44,10 +44,10 @@ class DrinksPage extends StatelessWidget {
         ),
       ),
       body: ListView.builder(
-        itemCount: products["DRINKS"].length,
+        itemCount: products["Cups"].length,
         itemBuilder: (BuildContext context, int index) {
-          return ItemDrinks(
-            drink: products["DRINKS"][index],
+          return ItemCups(
+            cup: products["Cups"][index],
             onProdAddedToCart: _cartUpdated,
           );
         },
@@ -57,9 +57,9 @@ class DrinksPage extends StatelessWidget {
 
   void _cartUpdated(ProductCart value) {
     if (products["CART"] == null)
-      products["CART"] = value.drinks;
+      products["CART"] = value.cups;
     else
-      for (var item in value.drinks) products["CART"].add(item);
+      for (var item in value.cups) products["CART"].add(item);
   }
 
   
