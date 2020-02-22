@@ -205,7 +205,6 @@ class _LoginPageState extends State<LoginPage> {
                                 TextStyle(fontFamily:'Akzidenz Grotesk Light', fontSize: 14, fontWeight: FontWeight.w500, color: Colors.white)),
                       ),
                       _divider(),
-                      //_facebookButton(),
                       Expanded(
                         flex: 2,
                         child: SizedBox(),
@@ -218,10 +217,6 @@ class _LoginPageState extends State<LoginPage> {
                   child: _createAccountLabel(),
                 ),
                 Positioned(top: 40, left: 0, child: _backButton()),
-                /*Positioned(
-                    top: -MediaQuery.of(context).size.height * .15,
-                    right: -MediaQuery.of(context).size.width * .4,
-                    child: BezierContainer())*/
               ],
             ),
           )
